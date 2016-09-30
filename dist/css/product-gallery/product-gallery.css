@@ -1,0 +1,42 @@
+
+.gallery .previews a {
+    display: block;
+    margin-bottom: 10px;
+}
+.gallery .previews a img {
+    max-height: 104px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.gallery .full {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+}
+.gallery .previews a {
+    overflow: hidden;
+    height: 104px;
+    position: relative;
+    float: left;
+    border: 1px solid #eee;
+    margin-right: 10px;
+}
+.gallery .previews a:hover, 
+.gallery .previews a.active {
+    border: 1px solid #777;
+}
+.gallery .full img:hover {
+    cursor: pointer;
+}
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
