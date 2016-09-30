@@ -12,17 +12,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 Run this sql file in phpmyadmin interface and create the database and table.
 
 #PHP Script for Login and Registration System
 
 To build the login/registration system we need to create the following files.
 
-index.php - This is the home page of our application
-register.php - It contains the user sign up form
-login.php - It contains the login form
-logout.php - This contains the user logout script
-dbconnect.php - MySQL database connection script
+##index.php - This is the home page of our application
+##register.php - It contains the user sign up form
+##login.php - It contains the login form
+##logout.php - This contains the user logout script
+##dbconnect.php - MySQL database connection script
 
 
 
