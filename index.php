@@ -35,6 +35,18 @@ include_once 'dbconnect.php';
         </div>
     </div>
 </nav>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="jumbotron">
+            <h1>Hello, Everyone</h1>
+            <p>This is a Simple login system. you can try this . It you want to become a good programmer</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+        <p align="center">&copy; Sazzad Bin Ashique.</p>
+</footer>
 
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/bootstrap.min.js"></script>
