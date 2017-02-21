@@ -20,12 +20,12 @@ include_once 'dbconnect.php';
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Simple login system</a>
+            <a class="navbar-brand" href="index.php">Login System</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['usr_id'])) { ?>
-                <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+                <li><p class="navbar-text"><?php echo $_SESSION['usr_name']; ?></p></li>
                 <li><a href="logout.php">Log Out</a></li>
                 <?php } else { ?>
                 <li><a href="login.php">Login</a></li>

@@ -43,7 +43,7 @@ if (isset($_POST['login'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Simple login system</a>
+            <a class="navbar-brand" href="index.php">Login System</a>
         </div>
         <!-- menu items -->
         <div class="collapse navbar-collapse" id="navbar1">
