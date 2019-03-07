@@ -1,7 +1,3 @@
-<?php 
-    require_once("init.php");
- ?>
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
