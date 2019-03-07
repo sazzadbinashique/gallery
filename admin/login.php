@@ -30,34 +30,29 @@ if (isset($_POST['submit'])) {
 }
 
 
+?>
 
-
-
-
-
-
- ?>
-
-
-
- <div class="col-md-4 col-md-offset-5">
- 	
-	<form action="" method="post">
-		
-		<div class="form-group">
-			<label for="username">Username</label>
-			<input type="text" class="form-control" name="username">
-		</div>
-
-		<div class="form-group">
-			<label for="password">Password</label>
-			<input type="password" class="form-control" name="password">
-		</div>
-
-		<div class="form-group">
-			
-			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-		</div>
-	</form>
-
- </div>
+<div class="container">
+	<div class="row">
+    	<div class="col-xs-9 col-xs-offset">
+       		<div class="form-wrap">
+        		<div class="well">
+        			<h1 class="text-center">Login Form</h1>
+		            <form role="form" action="" method="post">
+		                <div class="form-group">
+							<label for="username">Username</label>
+							<input type="text" class="form-control" name="username">
+						</div>
+		                <div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" name="password">
+						</div>
+		                <div class="form-group">
+							<input type="submit" name="submit" value="Submit" class="btn btn-primary right">
+						</div>
+		            </form>
+            	</div>
+          	</div>  
+        </div> <!-- /.col-xs-12 -->
+    </div> <!-- /.row -->
+</div> <!-- /.container -->

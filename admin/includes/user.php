@@ -1,7 +1,5 @@
 <?php 
 
-
-
 class User{
 
 	public $id; 
@@ -11,16 +9,11 @@ class User{
 	public $lastname; 
 	public $date; 
 
-
-
-
-
 	public static function find_all_users(){
 
 		// global $database;
 		// $result_set = $database->query("SELECT * FROM users");
 		// return $result_set; 
-
 
 		return self::find_this_query("SELECT * FROM users");
 	}
@@ -45,15 +38,9 @@ class User{
 		// 	return false;
 		// }
 
-
-
-
 		return $found_user; 
 
-
-
 	}
-
 
 
 	public static function find_this_query($sql){
