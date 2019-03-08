@@ -28,7 +28,7 @@ class User{
 		return !empty($the_result_array)? array_shift($the_result_array):false;
 		
 		
-		return $found_user; 
+		// return $found_user; 
 
 	}
 

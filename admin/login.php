@@ -3,18 +3,20 @@
 <?php 
 
 if ($session->is_signed_in()) {
+	// header("Location: index.php");
 	redirect("index.php");
 }
 
 if (isset($_POST['submit'])) {
 	
-	$username =trim($_POST['username']);
-	$password =trim($_POST['password']);
+	
+	 $username =trim($_POST['username']);
+	 $password =trim($_POST['password']);
 
 	//Method to checkh database user 
 
 	$user_found = User::verify_user($username, $password);
-	var_dump($user_found);
+	// var_dump($user_found);
 
 	if ($user_found) {
 		$session->login($user_found);
