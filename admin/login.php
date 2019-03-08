@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
 	//Method to checkh database user 
 
 	$user_found = User::verify_user($username, $password);
+	var_dump($user_found);
 
 	if ($user_found) {
 		$session->login($user_found);

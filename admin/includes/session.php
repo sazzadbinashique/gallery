@@ -27,7 +27,7 @@ class Session {
 	public function login($user){
 
 		if ($user) {
-			$this->user_id =$_SESSION['user_id'] =$user->id ;
+			$this->user_id =$_SESSION['user_id'] = $user->id ;
 			$this->signed_in = true;
 		}
 	}
