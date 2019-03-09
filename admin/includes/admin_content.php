@@ -23,13 +23,17 @@
 
 
 
-             $user = User::find_user_by_id(59);
-             $user->username = "sazzadali";
-             $user->password = "12345";
-             $user->firstname = "Suzon";
-             $user->lastname = "Ahmed";
-             // $user->date     = '2019-03-09';
-             $user->update();
+             // $user = User::find_user_by_id(59);
+             // $user->username = "sazzadali";
+             // $user->password = "12345";
+             // $user->firstname = "Suzon";
+             // $user->lastname = "Ahmed";
+             // // $user->date     = '2019-03-09';
+             // $user->update();
+
+
+             // $user = User::find_user_by_id(57);
+             // $user->delete();
 
 
     

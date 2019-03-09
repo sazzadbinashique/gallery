@@ -125,27 +125,35 @@ class User{
 		
 		$database->query($sql);
 
-		print_r($sql);
+		// print_r($sql);
+   
+		return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+		
+	}// end Update method
 
-		// if ($database->query($sql)) {
-			
-		// 	return true; 
+
+	public function delete(){
+
+		global $database;
+
+		$sql = "DELETE FROM users ";
+		$sql.= "WHERE id  =  " . $database->escape_string($this->id);
+		$sql.= " LIMIT 1";
+
+
+
+		$database->query($sql);
+		return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+
+		// if ($database->query($sql)){
+		// 	return true;
 		// }else{
-		// 	echo "not working";
+		// 	echo "does not work";
 		// 	return false;
 		// }
-		
-   
-		if (mysqli_affected_rows($database->connection) == 1)//? true : false;
-		{
-			return true;
-			echo "ok";
-		}
-		else{
-			echo "not working";
-			return false;
-		}
-		
+
+		// print_r($sql);
+
 	}
 
 
