@@ -19,14 +19,11 @@ class User{
 	}
 
 
-
 	public static function find_user_by_id($user_id){
 
 		global $database;
 		$the_result_array = self::find_this_query("SELECT * FROM users WHERE id = $user_id ");
-
 		return !empty($the_result_array)? array_shift($the_result_array):false;
-		
 		
 		return $found_user; 
 
@@ -42,7 +39,6 @@ class User{
 		while ($row = mysqli_fetch_array($result_set)) {
 		 	
 		 	$the_object_array[] = self::instantation($row);
-
 		 } 
 
 		return $the_object_array; 
@@ -52,7 +48,6 @@ class User{
 	public static function verify_user($username, $password){
 
 		global $database; 
-
 		$username = $database->escape_string($username);
 		$password =$database->escape_string($password); 
 
@@ -61,19 +56,15 @@ class User{
 		$sql.= "AND password = '{$password}' ";
 		$sql.= "LIMIT 1";
 
-
 		$the_result_array = self::find_this_query($sql);
 		return !empty($the_result_array)? array_shift($the_result_array):false;
 
 	}
 
 
-
 	public static function instantation($result){
 
-
 		$user_object = new self; 
-		
         foreach ($result as $the_attribute => $value) {
         	if ($user_object->has_the_attribute($the_attribute)) {
         		$user_object->$the_attribute = $value;
@@ -82,7 +73,6 @@ class User{
 
         return $user_object;
 	}
-
 
 
 	private function has_the_attribute($the_attribute){
@@ -95,13 +85,70 @@ class User{
 
 
 
+	public function create(){
+
+
+		global $database; 
+
+		$sql= "INSERT INTO users (username, password, firstname, lastname, date)"; 
+		$sql.= "VALUES ('";
+		$sql.= $database->escape_string($this->username). "', '";
+		$sql.= $database->escape_string($this->password). "', '";
+		$sql.= $database->escape_string($this->firstname). "', '";
+		$sql.= $database->escape_string($this->lastname). "', '";
+		$sql.= $database->escape_string($this->date). "')";
+
+
+
+		if ($database->query($sql)) {
+			
+			$this->id = $database->the_insert_id();
+			return true; 
+		}else{
+			return false; 
+		}
+	}// end create method 
+
+
+	public function update(){
+
+		global $database;
+
+		$sql= "UPDATE users SET";
+		$sql.= "username  = '" . $database->escape_string($this->username) . "', ";
+		$sql.= "password  = '" . $database->escape_string($this->password) . "', ";
+		$sql.= "firstname = '" . $database->escape_string($this->firstname) . "', ";
+		$sql.= "lastname  = '" . $database->escape_string($this->lastname) . "', ";
+		$sql.= "date      = '" . $database->escape_string($this->date) . "' ";
+		$sql.= "WHERE id  =  " . $database->escape_string($this->id);
+
+		
+		$database->query($sql);
+		// print_r($sql);
+		// printf("Affected rows (UPDATE): %d\n", mysqli_affected_rows($database->connection)== 1);
+
+   
+		if(mysqli_affected_rows($database->connection) == 0)
+		{
+			echo "ok";
+			return true;
+		} else{
+			echo "doesnt work";
+			return false;
+		}
+
+		
+	}
 
 
 
 
 
 
-}
+
+
+
+}// user class End ... 
 
 
 

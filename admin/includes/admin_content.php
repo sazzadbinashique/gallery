@@ -9,54 +9,31 @@
             </h1>
 
              <?php 
-               /* $sql = "SELECT * FROM users WHERE id =1";
-                $result = $database->query($sql);
-                $user_found = mysqli_fetch_array($result);
-                // $database->confirm_query($user_found);
 
-                echo $user_found['username'];
-                echo $user_found['password'];
-                echo $user_found['firstname'];
-                echo $user_found['lastname'];
-                echo $user_found['date'];
-              
-                $user = new User();
-                $result_set=$user->find_all_users();*/
-            /*
-             $result_set=User::find_all_users();
-             while ($row = mysqli_fetch_array($result_set)) {
-                 echo $row['username']. "<br>";
-             }*/
+             // $user = new User();
 
-                // $result = User::find_user_by_id(2);
-                // $user = User::instantation($result);
+             // $user->username = "Example_username";
+             // $user->password = "Example_password";
+             // $user->firstname = "Example_firstname";
+             // $user->lastname = "Example_lastname";
+             // $user->date = '2019-03-09';
 
-                /*$user = new User(); 
-
-                $user->id = $result['id'];              
-                $user->username = $result['username'];              
-                $user->password = $result['password'];              
-                $user->firstname = $result['firstname'];              
-                $user->lastname = $result['lastname'];              
-                $user->date = $result['date']; */ 
-                // echo $user->firstname . " " . $user->lastname;  
+             // $user->create();
 
 
-                /*$result = User::find_all_users();
-                while ($row = mysqli_fetch_array($result)) {
-                        echo $row['username'] . "<br>"; 
-                    }    */
-
-                // $results = User::find_all_users();
-                // foreach ($results as $result) {
-                //     echo $result->id . "<br>";
-                // }
-
-                    $found_user = User::find_user_by_id(1);
-
-                    echo $found_user->username;
 
 
+             $user = User::find_user_by_id('45');
+             $user->firstname = "Mujahid";
+             $user->lastname = "Ahmed";
+             $user->update();
+
+
+    
+             // echo "<pre>";
+             // print_r($user);
+             // echo "<pre>";
+   
 
               ?>   
 
