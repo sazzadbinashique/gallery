@@ -28,7 +28,7 @@ class User{
 		return !empty($the_result_array)? array_shift($the_result_array):false;
 		
 		
-		// return $found_user; 
+		return $found_user; 
 
 	}
 
@@ -58,8 +58,8 @@ class User{
 
 		$sql = "SELECT * FROM users WHERE";
 		$sql.= " username ='{$username}' ";
-		$sql.= "AND password = '{$password}'";
-		// $sql.= "LIMIT 1";
+		$sql.= "AND password = '{$password}' ";
+		$sql.= "LIMIT 1";
 
 
 		$the_result_array = self::find_this_query($sql);

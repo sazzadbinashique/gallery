@@ -1,18 +1,11 @@
 <?php include "includes/header.php" ?>
+
 <?php 
+    if (!$session->is_signed_in()) {
+        redirect("login.php");
+    }
 
-// if ($session) {
-//     echo "hello";
-// }
-
-if (!$session->is_signed_in()) {
-    redirect("login.php");
-}
-   
-
-
-?>
-
+ ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
