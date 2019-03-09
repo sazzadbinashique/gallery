@@ -10,21 +10,21 @@
 
              <?php 
 
-             // $user = new User();
+             $user = new User();
 
-             // $user->username = "Example_username";
-             // $user->password = "Example_password";
-             // $user->firstname = "Example_firstname";
-             // $user->lastname = "Example_lastname";
-             // // $user->date = '2019-03-09';
+             $user->username = "nilangona";
+             $user->password = "iloveyou";
+             $user->firstname = "Sazzad Bin";
+             $user->lastname = "Ashique";
+             // $user->date = '2019-03-09';
 
-             // $user->create();
-
-
+             $user->create();
 
 
-             // $user = User::find_user_by_id(59);
-             // $user->username = "sazzadali";
+
+
+             // $user = User::find_user_by_id(60);
+             // $user->username = "abbasali";
              // $user->password = "12345";
              // $user->firstname = "Suzon";
              // $user->lastname = "Ahmed";
@@ -32,8 +32,23 @@
              // $user->update();
 
 
-             // $user = User::find_user_by_id(57);
+             // $user = User::find_user_by_id(61);
              // $user->delete();
+
+
+              // $user = User::find_user_by_id(60);
+              // $user->username = "sumilove";
+              // $user->password = "mylove";
+              // $user->firstname = "Siala";
+              // $user->lastname = "Shams Sumi";
+              // $user->save();
+
+
+             // $user = new User();
+             // $user->username="sumasumi";
+             // $user->password = "loveisnotgood";
+             // $user->save();
+
 
 
     
