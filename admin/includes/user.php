@@ -90,13 +90,13 @@ class User{
 
 		global $database; 
 
-		$sql= "INSERT INTO users (username, password, firstname, lastname, date)"; 
+		$sql= "INSERT INTO users (username, password, firstname, lastname)"; 
 		$sql.= "VALUES ('";
 		$sql.= $database->escape_string($this->username). "', '";
 		$sql.= $database->escape_string($this->password). "', '";
 		$sql.= $database->escape_string($this->firstname). "', '";
-		$sql.= $database->escape_string($this->lastname). "', '";
-		$sql.= $database->escape_string($this->date). "')";
+		$sql.= $database->escape_string($this->lastname). "')";
+		// $sql.= $database->escape_string($this->date). "')";
 
 
 
@@ -114,29 +114,37 @@ class User{
 
 		global $database;
 
-		$sql= "UPDATE users SET";
+		$sql= "UPDATE users SET ";
 		$sql.= "username  = '" . $database->escape_string($this->username) . "', ";
 		$sql.= "password  = '" . $database->escape_string($this->password) . "', ";
 		$sql.= "firstname = '" . $database->escape_string($this->firstname) . "', ";
-		$sql.= "lastname  = '" . $database->escape_string($this->lastname) . "', ";
-		$sql.= "date      = '" . $database->escape_string($this->date) . "' ";
+		$sql.= "lastname  = '" . $database->escape_string($this->lastname) . "' ";
+		// $sql.= "date      = '" . $database->escape_string($this->date) . "' ";
 		$sql.= "WHERE id  =  " . $database->escape_string($this->id);
 
 		
 		$database->query($sql);
-		// print_r($sql);
-		// printf("Affected rows (UPDATE): %d\n", mysqli_affected_rows($database->connection)== 1);
 
+		print_r($sql);
+
+		// if ($database->query($sql)) {
+			
+		// 	return true; 
+		// }else{
+		// 	echo "not working";
+		// 	return false;
+		// }
+		
    
-		if(mysqli_affected_rows($database->connection) == 0)
+		if (mysqli_affected_rows($database->connection) == 1)//? true : false;
 		{
-			echo "ok";
 			return true;
-		} else{
-			echo "doesnt work";
+			echo "ok";
+		}
+		else{
+			echo "not working";
 			return false;
 		}
-
 		
 	}
 

@@ -16,16 +16,19 @@
              // $user->password = "Example_password";
              // $user->firstname = "Example_firstname";
              // $user->lastname = "Example_lastname";
-             // $user->date = '2019-03-09';
+             // // $user->date = '2019-03-09';
 
              // $user->create();
 
 
 
 
-             $user = User::find_user_by_id('45');
-             $user->firstname = "Mujahid";
+             $user = User::find_user_by_id(59);
+             $user->username = "sazzadali";
+             $user->password = "12345";
+             $user->firstname = "Suzon";
              $user->lastname = "Ahmed";
+             // $user->date     = '2019-03-09';
              $user->update();
 
 
