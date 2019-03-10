@@ -32,8 +32,8 @@
              // $user->update();
 
 
-             // $user = User::find_user_by_id(61);
-             // $user->delete();
+             // $photos = Photo::find_by_id(4);
+             // echo  $photos->title;
 
 
               // $user = User::find_user_by_id(60);
@@ -72,7 +72,7 @@
                 // $photo->create();
 
 
-                echo INCLUDES_PATH;
+                // echo INCLUDES_PATH;
 
 
     
