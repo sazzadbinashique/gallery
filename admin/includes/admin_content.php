@@ -10,15 +10,15 @@
 
              <?php 
 
-             $user = new User();
+             // $user = new User();
 
-             $user->username = "nilangona";
-             $user->password = "iloveyou";
-             $user->firstname = "Sazzad Bin";
-             $user->lastname = "Ashique";
-             // $user->date = '2019-03-09';
+             // $user->username = "nilangona";
+             // $user->password = "iloveyou";
+             // $user->firstname = "Sazzad Bin";
+             // $user->lastname = "Ashique";
+             // // $user->date = '2019-03-09';
 
-             $user->create();
+             // $user->create();
 
 
 
@@ -49,6 +49,30 @@
              // $user->password = "loveisnotgood";
              // $user->save();
 
+
+
+              // $photos = Photo::find_all();
+                
+              //   foreach ($photos as $photo) {
+                   
+              //       echo $photo->title;
+              //       echo "<br>";
+              //   }
+
+
+
+                // $photo = new Photo();
+
+                // $photo->title = "Photo from sazzad bin ashique";
+                // $photo->description = "I lvoe photography and I lvoe to share with people . what ever i click by my camera . I just loved it. ";
+                // $photo->filename = "sumon.jpg";
+                // $photo->type = "image";
+                // $photo->size= '222';
+
+                // $photo->create();
+
+
+                echo INCLUDES_PATH;
 
 
     

@@ -1,4 +1,43 @@
 <?php include "includes/header.php" ?>
+<?php 
+    if (!$session->is_signed_in()) {
+        redirect("login.php");
+    }
+
+ ?>
+
+
+
+ <?php 
+
+
+ $message = "";
+
+if (isset($_POST['submit'])) {
+
+    $photo = new Photo();
+
+    $photo->title = $_POST['title'];
+    $photo->description = $_POST['description'];
+    $photo->set_file($_FILES['file_upload']);
+
+
+    if ($photo->save()) {
+
+        $message = "Photo uploaded Successfully."; 
+
+    }else{
+        $message = join("<br>", $photo->errors);
+        echo "here";
+    }
+}
+
+
+
+
+
+
+  ?>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -39,14 +78,33 @@
                         Upload Page
                         <small>Subheading</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Upload Page
-                        </li>
-                    </ol>
+
+                    <div class="col-md-6">
+                    <form action="upload.php" method="post" enctype="multipart/form-data" >
+                         
+                         <h1 class="btn-success"><?php echo $message; ?></h1>   
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="title">
+                        </div>
+                         <div class="form-group">
+                         <textarea name="description" id="" class="form-control" cols="30" rows="10"></textarea>
+                            <!-- <input type="textarea" class="form-control" name="description"> -->
+                        </div>
+
+                         <div class="form-group">
+                            <input type="file" class="" name="file_upload" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class ="btn btn-primary" name="submit" value="Submit" >
+                        </div>
+                            
+
+
+                    </form>
+                    </div>
+
                 </div>
             </div>
             <!-- /.row -->

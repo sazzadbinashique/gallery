@@ -17,20 +17,14 @@ class Database {
 	}
 
 
-
-
 	public function db_open_connection(){
 
-		// $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 		$this->connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 		if ($this->connection->connect_errno) {
 			die("Databse connection failed very Badly" . mysqli_error());
 		}
 
 	}
-
-
-
 
 
 	public function query($sql){
@@ -41,14 +35,12 @@ class Database {
 	}
 
 
-
 	private function confirm_query($result){
 
 		if (!$result) {
 		die("query failed");
 		}
 	}
-
 
 
 	public function escape_string($string){
@@ -60,7 +52,6 @@ class Database {
 
 	public function the_insert_id(){
 
-		// global $connection;
 		return mysqli_insert_id($this->connection);
 	}
 
