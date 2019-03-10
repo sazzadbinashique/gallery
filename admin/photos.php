@@ -1,5 +1,18 @@
 <?php include "includes/header.php" ?>
 
+
+<?php  if (!$session->is_signed_in()) { redirect("login.php"); } ?>
+
+<?php 
+
+$photos = Photo::find_all();
+
+
+    
+ ?>
+
+
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,17 +49,53 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Photos Page
+                        Photos 
                         <small>Subheading</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Photos Page
-                        </li>
-                    </ol>
+                    
+                    <div class="col-md-12">
+                        
+                        <table class="table table-bordered table-hover">
+
+                          <thead>
+                                <tr>
+                                    <th>Photo</th>
+                                    <th>ID</th>
+                                    <th>File Name</th>
+                                    <th>Title</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>  
+
+                            <tbody>
+
+                            <?php foreach ($photos as $photo): ?>
+                                <tr>
+                                    <td><img src="<?php echo $photo->pictures_path() ?>" alt="image" width="100"></td>
+                                    <td><?php echo $photo->photo_id ?></td>
+                                    <td><?php echo $photo->filename ?></td>
+                                    <td><?php echo $photo->title ?></td>
+                                    <td><?php echo $photo->size ?></td>
+                                </tr>
+
+                            <?php endforeach; ?>
+                            </tbody>
+
+
+
+
+
+
+
+                        </table>
+
+
+
+
+                    </div>
+
+
+
                 </div>
             </div>
             <!-- /.row -->

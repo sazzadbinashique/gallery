@@ -58,6 +58,12 @@
 	}// end set_file method 
 
 
+	public function pictures_path(){
+
+		return $this->upload_directory. DS . $this->filename;
+	}
+
+
 
 	public function save(){
 
