@@ -14,7 +14,7 @@
 
     $user = User::find_by_id($_GET['id']);
 
-    // print_r($user);
+
 
     if (isset($_POST['update'])) {
 
@@ -23,11 +23,17 @@
           $user->password   = $_POST['password'];
           $user->firstname  =  $_POST['firstname'];
           $user->lastname   =  $_POST['lastname'];
-          $user->set_file($_FILES['user_image']);
 
-         $user->save_user_and_image();
+          if (empty($_FILES['user_image'])) {
+              $user->save();
+          }else{
 
+            $user->set_file($_FILES['user_image']);
+            $user->save_user_and_image();
+            $user->save();
 
+            redirect("edit_user.php?id = {$uer->id}");
+          }
 
                   
         }
@@ -85,13 +91,7 @@
 
                     <h1 class="btn-success"><?php echo $message; ?></h1> 
 
-                    <?php 
-
-                        // echo "<pre>";
-                        // print_r($user);
-                        // echo "<pre>";
-                     ?>
-                    
+                 
                     <div class="col-md-8 ">
                        <div class="form-group">
                         
@@ -104,22 +104,26 @@
 
                       
                        <div class="form-group">
-                            <label for="firstname">firstname</label>
+                            <label for="firstname">Firstname</label>
                            <input type="text" name="firstname" class="form-control" value="<?php echo $user->firstname; ?> ">
                        </div>  
 
                        <div class="form-group">
-                            <label for="lastname">lastname</label>
+                            <label for="lastname">Lastname</label>
                            <input type="text" name="lastname" class="form-control" value="<?php echo $user->lastname; ?> " >
                        </div> 
 
                        <div class="form-group">
-                            <label for="password">password</label>
+                            <label for="password">Password</label>
                            <input type="password" name="password" class="form-control" value="<?php echo $user->password; ?> ">
                        </div>
 
                        <div class="form-group">
                            <input type="submit" name="update" class="btn btn-primary pull-right" value="Update" >
+                       </div>  
+                       <div class="form-group">
+                       <a href="delete_user.php?id=<?php echo $user->id ;?>" class ="btn btn-danger">Delete</a>
+                           <!-- <input type="submit" name="update" class="btn btn-primary pull-left" value="Delete" > -->
                        </div>  
                       
                     </div>
