@@ -20,19 +20,18 @@ if (empty($_GET['id'])) {
           $photo->description    =  $_POST['description'];
 
 
-          $photo->save();
+            if ($photo->save()) {
+
+                $message = "Photo updated Successfully."; 
+
+            }else{
+                $message = join("<br>", $photo->errors);
+            }
         }
     
     }
 
 }
-
-
-
-
-
-
-
     
  ?>
 
@@ -80,6 +79,8 @@ if (empty($_GET['id'])) {
                      
 
                     <form action="" method="post">
+
+                    <h1 class="btn-success"><?php echo $message; ?></h1>  
                     
                     <div class="col-md-8">
                        <div class="form-group">
@@ -110,7 +111,7 @@ if (empty($_GET['id'])) {
 
 
                     <div class="col-md-4">
-
+                        
                         <div class="photo-info-box">
                             <div class="info-box-header">
                                 <h4>Save <span id="toggle" class="glyphicon glyphicon-menu-up pull-right"></span> </h4>
@@ -121,13 +122,13 @@ if (empty($_GET['id'])) {
                                         <span class="glyphicon glyphicon-calendar">Uploaded on: March 10, 2019 @ 5:24 </span>
                                     </p>
                                     <p class="text">
-                                        Photo Id: <span class="data photo_id_box">34</span>
+                                        Photo Id: <span class="data photo_id_box"><?php echo $photo->id; ?></span>
                                     </p>
                                      <p class="text">
-                                        Filename: <span class="data">image.jpg</span>
+                                        Filename: <span class="data"><?php echo $photo->filename; ?></span>
                                     </p>
                                      <p class="text">
-                                        File Size: <span class="data">322222</span>
+                                        File Size: <span class="data"><?php echo $photo->size; ?></span>
                                     </p>
                                 </div>
                                 <div class="info-box-footer clearfix">
@@ -140,7 +141,7 @@ if (empty($_GET['id'])) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                  </div>
 
                  </form>
 

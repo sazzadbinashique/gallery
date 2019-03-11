@@ -24,7 +24,6 @@ if (isset($_POST['submit'])) {
 
     }else{
         $message = join("<br>", $photo->errors);
-        echo "here";
     }
 }
 

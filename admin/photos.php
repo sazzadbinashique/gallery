@@ -1,17 +1,12 @@
 <?php include "includes/header.php" ?>
 
-
 <?php  if (!$session->is_signed_in()) { redirect("login.php"); } ?>
 
 <?php 
 
 $photos = Photo::find_all();
-
-
     
  ?>
-
-
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -37,11 +32,7 @@ $photos = Photo::find_all();
         </nav>
 
 
-
-
-
         <div id="page-wrapper">
-
             
         <div class="container-fluid">
 
@@ -70,12 +61,14 @@ $photos = Photo::find_all();
                             <tbody>
 
                             <?php foreach ($photos as $photo): ?>
+
+
                                 <tr>
-                                    <td><img src="<?php echo $photo->pictures_path(); ?>" alt="image" width="150" height = "150">
+                                    <td><img class ="admin-photo-thumbnail" src="<?php echo $photo->pictures_path(); ?>" alt="image">
                                         
                                         <div class="pictures_link">
                                             <a href="delete_photo.php?id=<?php echo $photo->id ; ?>" class ="btn btn-link btn-sm" >Delete</a>
-                                            <a href="edit_photo.php?id=<?php echo $photo->id ;?> "class ="btn btn-link btn-sm">Edit</a>
+                                            <a href="edit_photo.php?id=<?php echo $photo->id ;?>" class ="btn btn-link btn-sm">Edit</a>
                                             <a href="" class ="btn btn-link btn-sm">View</a>
                                         </div>
                                         
@@ -89,21 +82,8 @@ $photos = Photo::find_all();
                             <?php endforeach; ?>
                             </tbody>
 
-
-
-
-
-
-
                         </table>
-
-
-
-
                     </div>
-
-
-
                 </div>
             </div>
             <!-- /.row -->
