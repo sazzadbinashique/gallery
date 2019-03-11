@@ -5,6 +5,8 @@
 
 <?php 
 
+ $message = "";
+
 if (empty($_GET['id'])) {
     redirect("photos.php");
 }else{
