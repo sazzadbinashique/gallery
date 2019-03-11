@@ -36,7 +36,7 @@ class User extends Db_object{
 
 		if (empty($file) || !$file || !is_array($file)) {
 			
-			$this->errors[] = "There was not file uploaded here."; 
+			$this->errors[] = "There is no file uploaded here."; 
 			return false; 
 
 		}elseif ($file['error'] != 0) {
@@ -63,6 +63,7 @@ class User extends Db_object{
 		if ($this->id) {
 			$this->update();
 		}else{
+			echo "working";
 
 			if (!empty($this->errors)) {
 				return false;
@@ -124,10 +125,7 @@ class User extends Db_object{
 
 	}
 
-	// 	public function user_image_path(){
 
-	// 	return $this->upload_directory. DS . $this->user_image;
-	// }
 
 
 

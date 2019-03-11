@@ -73,7 +73,7 @@ $users = User::find_all();
                                          <div class="image_link">
                                             <a href="delete_user.php?id=<?php echo $user->id ; ?>" class ="btn btn-link btn-sm" >Delete</a>
                                             <a href="edit_user.php?id=<?php echo $user->id ;?>" class ="btn btn-link btn-sm">Edit</a>
-                                            <a href="" class ="btn btn-link btn-sm">View</a>
+                                            <!-- <a href="" class ="btn btn-link btn-sm">View</a> -->
                                         </div>
                                     </td>
                                     <td><?php echo $user->firstname; ?></td>

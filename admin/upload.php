@@ -70,8 +70,8 @@ if (isset($_POST['submit'])) {
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Upload Page
-                        <small>Subheading</small>
+                        Upload Photo
+                        <small>Add Form</small>
                     </h1>
 
                     <div class="col-md-6">

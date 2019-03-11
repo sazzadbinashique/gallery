@@ -7,9 +7,16 @@
 
     $message = "";
 
-    if (isset($_POST['create'])) {
-        
-        $user = new User();
+    if (empty($_GET['id'])) {
+
+        redirect("users.php");
+    }
+
+    $user = User::find_by_id($_GET['id']);
+
+    // print_r($user);
+
+    if (isset($_POST['update'])) {
 
         if ($user) {
           $user->username   =  $_POST['username'];
@@ -18,14 +25,10 @@
           $user->lastname   =  $_POST['lastname'];
           $user->set_file($_FILES['user_image']);
 
-        
-            if ($user->save_user_and_image()) {
+         $user->save_user_and_image();
 
-             $message = "User uploaded Successfully."; 
 
-            }else{
-                $message = join("<br>", $user->errors);
-            }
+
                   
         }
     
@@ -69,41 +72,54 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         Users 
-                        <small>Add Form</small>
+                        <small>Edit Form</small>
                     </h1>
                      
 
+                    <div class="col-md-4">
+                        <img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?> " >
+                    </div>   
+
+
                     <form action="" method="post" enctype="multipart/form-data">
 
-                    <h1 class="btn-success"><?php echo $message; ?></h1>  
+                    <h1 class="btn-success"><?php echo $message; ?></h1> 
+
+                    <?php 
+
+                        // echo "<pre>";
+                        // print_r($user);
+                        // echo "<pre>";
+                     ?>
                     
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-8 ">
                        <div class="form-group">
+                        
                            <input type="file" name="user_image"  >
                        </div>
                        <div class="form-group">
                             <label for="username">Username</label>
-                           <input type="text" name="username" class="form-control" >
+                           <input type="text" name="username" class="form-control" value="<?php echo $user->username; ?> " >
                        </div>
 
                       
                        <div class="form-group">
                             <label for="firstname">firstname</label>
-                           <input type="text" name="firstname" class="form-control">
+                           <input type="text" name="firstname" class="form-control" value="<?php echo $user->firstname; ?> ">
                        </div>  
 
                        <div class="form-group">
                             <label for="lastname">lastname</label>
-                           <input type="text" name="lastname" class="form-control" >
+                           <input type="text" name="lastname" class="form-control" value="<?php echo $user->lastname; ?> " >
                        </div> 
 
                        <div class="form-group">
                             <label for="password">password</label>
-                           <input type="password" name="password" class="form-control" >
+                           <input type="password" name="password" class="form-control" value="<?php echo $user->password; ?> ">
                        </div>
 
                        <div class="form-group">
-                           <input type="submit" name="create" class="btn btn-primary pull-right" value="Submit" >
+                           <input type="submit" name="update" class="btn btn-primary pull-right" value="Update" >
                        </div>  
                       
                     </div>
