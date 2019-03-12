@@ -25,6 +25,12 @@ if (isset($_POST['submit'])) {
     }else{
         $message = join("<br>", $photo->errors);
     }
+}else{
+
+    $message = "";
+    $title = "";
+    $description = "";
+    $file_upload = "";
 }
 
 
@@ -82,13 +88,13 @@ if (isset($_POST['submit'])) {
                         <div class="form-group">
                             <input type="text" class="form-control" name="title">
                         </div>
-                         <div class="form-group">
-                         <textarea name="description" id="" class="form-control" cols="30" rows="10"></textarea>
-                            <!-- <input type="textarea" class="form-control" name="description"> -->
-                        </div>
 
                          <div class="form-group">
                             <input type="file" class="" name="file_upload" >
+                        </div>
+
+                         <div class="form-group">
+                         <textarea name="description" id="" class="form-control" cols="30" rows="10" ></textarea>
                         </div>
 
                         <div class="form-group">

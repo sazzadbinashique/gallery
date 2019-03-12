@@ -55,6 +55,8 @@ $photos = Photo::find_all();
                                     <th>File Name</th>
                                     <th>Title</th>
                                     <th>Size</th>
+                                    <th>Comment</th>
+
                                 </tr>
                             </thead>  
 
@@ -69,7 +71,7 @@ $photos = Photo::find_all();
                                         <div class="pictures_link">
                                             <a href="delete_photo.php?id=<?php echo $photo->id ; ?>" class ="btn btn-link btn-sm" >Delete</a>
                                             <a href="edit_photo.php?id=<?php echo $photo->id ;?>" class ="btn btn-link btn-sm">Edit</a>
-                                            <a href="" class ="btn btn-link btn-sm">View</a>
+                                            <a href="../single_photo.php?id=<?php echo $photo->id; ?> " class ="btn btn-link btn-sm">View</a>
                                         </div>
                                         
                                     </td>
@@ -77,6 +79,17 @@ $photos = Photo::find_all();
                                     <td><?php echo $photo->filename ?></td>
                                     <td><?php echo $photo->title ?></td>
                                     <td><?php echo $photo->size ?></td>
+
+
+                                    <td>
+                                        <a href="comment_photo.php?id=<?php echo $photo->id; ?> " class ="btn btn-link btn-sm">
+                                            <?php 
+                                               $comments = Comment::find_the_comments($photo->id);
+                                                echo count($comments);
+                                            ?>
+                                        </a>
+                                            
+                                    </td>
                                 </tr>
 
                             <?php endforeach; ?>

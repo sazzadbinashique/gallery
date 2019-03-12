@@ -44,6 +44,13 @@ class Comment extends Db_object{
 	}
 
 
+	// public static function message($mes){
+
+	// 	return $mes; 
+
+	// }
+
+
 
 
 
