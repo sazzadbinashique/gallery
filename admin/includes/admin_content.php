@@ -7,93 +7,113 @@
                 Admin Page
                 <small>Subheading</small>
             </h1>
-
-             <?php 
-
-             // $user = new User();
-
-             // $user->username = "nilangona";
-             // $user->password = "iloveyou";
-             // $user->firstname = "Sazzad Bin";
-             // $user->lastname = "Ashique";
-             // // $user->date = '2019-03-09';
-
-             // $user->create();
-
-
-
-
-             // $user = User::find_user_by_id(60);
-             // $user->username = "abbasali";
-             // $user->password = "12345";
-             // $user->firstname = "Suzon";
-             // $user->lastname = "Ahmed";
-             // // $user->date     = '2019-03-09';
-             // $user->update();
-
-
-             // $photos = Photo::find_by_id(4);
-             // echo  $photos->title;
-
-
-              // $user = User::find_user_by_id(60);
-              // $user->username = "sumilove";
-              // $user->password = "mylove";
-              // $user->firstname = "Siala";
-              // $user->lastname = "Shams Sumi";
-              // $user->save();
-
-
-             // $user = new User();
-             // $user->username="sumasumi";
-             // $user->password = "loveisnotgood";
-             // $user->save();
-
-
-
-              // $photos = Photo::find_all();
-                
-              //   foreach ($photos as $photo) {
                    
-              //       echo $photo->title;
-              //       echo "<br>";
-              //   }
+  <!-- /.row -->
+                
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-file-text fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                          <div class='huge'><?php echo $session->count; ?></div>
+                                <div>New Views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                             <div class='huge'><?php echo Photo::count_all(); ?></div>
+                              <div>Photos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="photos.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Phot in Gallery</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-user fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                            <div class='huge'><?php echo User::count_all() ?></div>
+                                <div> Users</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="users.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Users</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-list fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class='huge'><?php echo Comment::count_all(); ?></div>
+                                 <div>Comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="comments.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">Total Comments</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+                        
+ <!-- /.row -->
+
+        <div class="row">
+            
+            <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 
+        </div>
 
-                // $photo = new Photo();
-
-                // $photo->title = "Photo from sazzad bin ashique";
-                // $photo->description = "I lvoe photography and I lvoe to share with people . what ever i click by my camera . I just loved it. ";
-                // $photo->filename = "sumon.jpg";
-                // $photo->type = "image";
-                // $photo->size= '222';
-
-                // $photo->create();
+            
 
 
-                // echo INCLUDES_PATH;
-
-
-    
-             // echo "<pre>";
-             // print_r($user);
-             // echo "<pre>";
-   
-
-              ?>   
-
-
-
-
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                </li>
-                <li class="active">
-                    <i class="fa fa-file"></i> Admin Page
-                </li>
-            </ol>
+            
         </div>
     </div>
     <!-- /.row -->

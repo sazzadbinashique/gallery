@@ -68,7 +68,6 @@ if (isset($_POST['submit'])) {
 
 
         <div id="page-wrapper">
-
             
         <div class="container-fluid">
 
@@ -100,8 +99,6 @@ if (isset($_POST['submit'])) {
                         <div class="form-group">
                             <input type="submit" class ="btn btn-primary" name="submit" value="Submit" >
                         </div>
-                            
-
 
                     </form>
                     </div>

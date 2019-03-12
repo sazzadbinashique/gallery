@@ -39,6 +39,8 @@
     <![endif]-->
      <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
 
