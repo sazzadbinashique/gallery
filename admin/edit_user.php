@@ -82,7 +82,7 @@
                     </h1>
                      
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?> " >
                     </div>   
 
@@ -92,7 +92,7 @@
                     <h1 class="btn-success"><?php echo $message; ?></h1> 
 
                  
-                    <div class="col-md-8 ">
+                    <div class="col-md-6 ">
                        <div class="form-group">
                         
                            <input type="file" name="user_image"  >
@@ -123,7 +123,6 @@
                        </div>  
                        <div class="form-group">
                        <a href="delete_user.php?id=<?php echo $user->id ;?>" class ="btn btn-danger">Delete</a>
-                           <!-- <input type="submit" name="update" class="btn btn-primary pull-left" value="Delete" > -->
                        </div>  
                       
                     </div>
