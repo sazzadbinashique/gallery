@@ -21,10 +21,7 @@
         $sql.= "LIMIT {$items_per_page} ";
         $sql.= "OFFSET {$paginate->offset()}";
 
-        // print_r($sql);
         $photos = Photo::find_by_query($sql);
-
-        // print_r($paginates);
 
         // $photos = Photo::find_all();
 

@@ -45,7 +45,8 @@ $users = User::find_all();
                         <!-- <small>Subheading</small> -->
                     </h1>
 
-                    <a href="add_user.php" class="btn btn-primary">Add User</a>
+                    <a href="add_user.php" class="btn btn-primary pull-right">Add User</a>
+
                     
                     <div class="col-md-12">
                         
