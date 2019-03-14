@@ -66,7 +66,7 @@ $photos = Photo::find_all();
 
 
                                 <tr>
-                                    <td><img class ="admin-photo-thumbnail" src="<?php echo $photo->pictures_path(); ?>" alt="image">
+                                    <td><img class ="admin-photo-thumbnail" src="<?php echo $photo->pictures_path(); ?>" alt="image" width="" >
                                         
                                         <div class="pictures_link">
                                             <a href="delete_photo.php?id=<?php echo $photo->id ; ?>" class ="btn btn-link btn-sm" >Delete</a>
