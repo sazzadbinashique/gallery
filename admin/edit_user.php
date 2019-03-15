@@ -1,5 +1,5 @@
 <?php include "includes/header.php" ?>
-<?php include "includes/photo_library_modal.php" ?>
+
 
 
 <?php  if (!$session->is_signed_in()) { redirect("login.php"); } ?>
@@ -33,7 +33,7 @@
             $user->save_user_and_image();
             $user->save();
 
-            redirect("edit_user.php?id = {$uer->id}");
+            redirect("edit_user.php?id = {$user->id}");
           }
 
                   
@@ -68,6 +68,8 @@
 
             <!-- /.navbar-collapse -->
         </nav>
+
+        <?php include "includes/photo_library_modal.php" ?>
 
 
 

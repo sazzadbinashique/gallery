@@ -110,16 +110,12 @@ class User extends Db_object{
 
 
 
-	// public function delete_user(){
+	public function ajax_save_user_image($user_image, $user_id){
 
-	// 	if ($this->delete()) {
-	// 		$target_path= SITE_ROOT. DS . 'admin' . DS . $this->user_image_path();
-	// 		return unlink($target_path)? true:false;
-	// 	}else{
-	// 		return false;
-	// 	}
-	// }
-
+		$this->user_image= $user_image; 
+		$this->id        = $user_id; 
+		$this->save();
+	}
 
 
 

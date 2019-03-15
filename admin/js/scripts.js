@@ -6,7 +6,7 @@ $(document).ready(function() {
 	var user_id;
 	var image_src;
 	var image_href_splitted;
-	var iamge_id;
+	var image_name;
 
 	
 
@@ -18,14 +18,35 @@ $(document).ready(function() {
 		user_id = user_href_splitted[user_href_splitted.length -1];
 
 
-
 		image_src = $(this).prop("src");
 		image_href_splitted= image_src.split("/"); 
-		image_id=image_href_splitted[image_href_splitted.length-1];
+		image_name=image_href_splitted[image_href_splitted.length-1];
 
-		alert(image_id);
+		// alert(image_name);
 
 	});
+
+
+
+	$("#set_user_image").click(function(){
+
+
+		$.ajax({
+
+			url:"includes/ajax_code.php",
+			data:{image_name:image_name, user_id: user_id},
+			type: "POST", 
+			success:function(data){
+				if (!data.error) {
+				
+					location.reload(true);
+				}
+			}
+		})
+
+	});	
+
+
 
 tinymce.init({selector:'textarea'});
 });
