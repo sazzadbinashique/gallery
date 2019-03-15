@@ -25,7 +25,7 @@ $photos = User::find_all();
                       
                       <div class="col-xs-2">
                         <a href="#" role="checkbox" aria-checked="false" tabindex="0" id="" class="thumbnail" >
-                          <img src="<?php echo $photo->image_path_and_placeholder(); ?>" alt="image" class="modal_thumbnails img-responsive">
+                          <img src="<?php echo $photo->image_path_and_placeholder(); ?>" data="<?php echo $photo->id; ?>" alt="image" class="modal_thumbnails img-responsive">
                           </a>
                         <div class="photo-id hidden"></div>
                       </div>
